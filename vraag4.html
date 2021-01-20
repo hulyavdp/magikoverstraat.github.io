@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mag ik over straat?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form name="feedback" action="javascript:void(0)">
+<p>Ga je naar een huisfeest?</p>
+        <label>
+          <input type="radio" id="jup" name="yesOrNo" value="yes" onchange="displayQuestion(this.value)" />Jazeker</label>
+        <label>
+          <input type="radio" id="nope" name="yesOrNo" value="no" onchange="displayQuestion(this.value)" />Nee joh</label>
+      
+        <div id="yesQuestion" style="display:none;"><br/>
+          Blijf thuis, gek
+        </div>
+      
+        <div id="noQuestion" style="display:none;"><br/>
+          Netjes
+          <button onclick="document.location='./vraag5.html'" class="btn">Laatste vraag</button>
+
+        </div>
+      
+      
+      
+      </form>
+
+      <script>
+
+
+function displayQuestion(answer) {
+
+  document.getElementById(answer + 'Question').style.display = "block";
+
+  if (answer == "yes") { // hide the div that is not selected
+
+    document.getElementById('noQuestion').style.display = "none";
+
+  } else if (answer == "no") {
+
+    document.getElementById('yesQuestion').style.display = "none";
+
+  }
+
+}
+      </script>
+</body>
+</html>
